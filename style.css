@@ -1,0 +1,403 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f6f7fb;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* Prevent section overlap with fixed navbar */
+section {
+    scroll-margin-top: 90px;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #e63946;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.sos-btn {
+    background: white;
+    color: #e63946;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.sos-btn:hover {
+    background: #ffe5e5;
+}
+/* ================= DARK MODE TOGGLE ================= */
+
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.theme-btn{
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:white;
+    color:#e63946;
+    cursor:pointer;
+    font-size:18px;
+    transition:.3s;
+}
+
+.theme-btn:hover{
+    transform:scale(1.08);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1615461066841-6116e61058f4') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding-top: 80px;
+    
+}
+body.dark .overlay{
+    background:linear-gradient(
+        rgba(0,0,0,.75),
+        rgba(0,0,0,.75)
+    );
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(230,57,70,0.7));
+}
+
+.hero-content {
+    position: relative;
+    color: white;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    color: #ffccd5;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    margin-bottom: 25px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 10px;
+    display: inline-block;
+}
+
+.primary {
+    background: #e63946;
+    color: white;
+}
+
+.secondary {
+    border: 2px solid white;
+    color: white;
+}
+
+/* Features */
+.features {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.features span {
+    color: #e63946;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Analytics */
+.analytics {
+    padding: 80px 40px;
+    text-align: center;
+    background: #fff;
+}
+
+.analytics span {
+    color: #e63946;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.stat-card {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Find Donor */
+.find-donor {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.search-bar input {
+    width: 100%;
+    max-width: 600px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+.blood-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+    background: #eee;
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    background: #e63946;
+    color: white;
+}
+
+.donor-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 10px auto;
+    max-width: 700px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Hospitals */
+.hospitals {
+    padding: 80px 40px;
+    background: #f6f7fb;
+    text-align: center;
+}
+
+.hospital-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.hospital-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.hospital-card span {
+    float: right;
+    background: #ffe5e5;
+    color: #e63946;
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+/* Emergency */
+.emergency {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.emergency form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.emergency input,
+.emergency select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.emergency button {
+    background: #e63946;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* ================= DARK MODE ================= */
+
+body.dark{
+    background:#121212;
+    color:#f1f1f1;
+}
+
+body.dark .features,
+body.dark .find-donor,
+body.dark .emergency{
+    background:#181818;
+}
+
+body.dark .analytics,
+body.dark .hospitals{
+    background:#1f1f1f;
+}
+
+body.dark .feature-card,
+body.dark .stat-card,
+body.dark .hospital-card,
+body.dark .donor-card{
+    background:#252525;
+    color:white;
+}
+
+body.dark input,
+body.dark select{
+    background:#2c2c2c;
+    color:white;
+    border:1px solid #555;
+}
+
+body.dark .filter-btn{
+    background:#333;
+    color:white;
+}
+
+body.dark .filter-btn.active{
+    background:#e63946;
+}
+
+body.dark footer{
+    background:#111;
+}
+
+body.dark .theme-btn{
+    background:#2b2b2b;
+    color:#ffd43b;
+}
+/* ===== NAVBAR DARK MODE ===== */
+
+body.dark .navbar{
+    background:rgba(18,18,18,0.95);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid #2f2f2f;
+}
+
+body.dark .logo{
+    color:#ffffff;
+}
+
+body.dark .nav-links a{
+    color:#ffffff;
+}
+
+body.dark .nav-links a:hover{
+    color:#ff6b6b;
+}
+
+body.dark .sos-btn{
+    background:#e63946;
+    color:#ffffff;
+}
+
+body.dark .sos-btn:hover{
+    background:#ff4d5a;
+}
+
+body.dark .theme-btn{
+    background:#2b2b2b;
+    color:#ffd43b;
+}

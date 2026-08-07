@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeLine - Blood Donor Network</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-regular fa-heart"></i> LifeLine
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#find">Find Donor</a></li>
+                <li><a href="#analytics">Analytics</a></li>
+                <li><a href="#hospitals">Hospitals</a></li>
+                <li><a href="#emergency">Emergency</a></li>
+            </ul>
+        </nav>
+        <div class="nav-actions">
+    <button id="themeToggle" class="theme-btn">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <button class="sos-btn" onclick="showSOS()">
+        SOS Emergency
+    </button>
+</div>
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section id="home" class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <span class="badge">
+                <i class="fa-solid fa-heart"></i> Emergency Blood Donor Network
+            </span>
+            <h1>Every Drop of Blood</h1>
+            <h2>Saves a Life</h2>
+            <p>
+                Connect with nearby blood donors instantly. Our network of
+                verified donors ensures you find the right match when every second counts.
+            </p>
+            <div class="hero-buttons">
+                <a href="#find" class="btn primary">
+                    <i class="fa-solid fa-magnifying-glass"></i> Find a Donor
+                </a>
+                <a href="#emergency" class="btn secondary">
+                    <i class="fa-solid fa-phone"></i> Emergency Request
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+    <section class="features">
+        <h2>Why Choose <span>LifeLine?</span></h2>
+        <p class="subtitle">Built with technology to save lives faster</p>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Instant Matching</h3>
+                <p>Quickly connect with compatible donors in your area.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-location-dot"></i>
+                <h3>GPS Tracking</h3>
+                <p>Find the nearest available donor using location services.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Verified Donors</h3>
+                <p>All donors are verified to ensure safety and reliability.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ANALYTICS ================= -->
+    <section id="analytics" class="analytics">
+        <h2>Network <span>Analytics</span></h2>
+        <p class="subtitle">Real-time statistics from our donor network</p>
+        <div class="stats">
+            <div class="stat-card">
+                <i class="fa-solid fa-users"></i>
+                <h3 class="counter" data-target="1200">0</h3>
+                <p>Total Donors</p>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-droplet"></i>
+                <h3 class="counter" data-target="350">0</h3>
+                <p>Successful Donations</p>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <h3 class="counter" data-target="50">0</h3>
+                <p>Active Requests</p>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-hospital"></i>
+                <h3 class="counter" data-target="25">0</h3>
+                <p>Partner Hospitals</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FIND DONOR ================= -->
+    <section id="find" class="find-donor">
+        <h2>Find a <span>Donor</span></h2>
+        <p class="subtitle">Search our verified donor database by name or blood group</p>
+
+        <div class="search-bar">
+            <input type="text" id="searchName" placeholder="Search by donor name...">
+            <div class="blood-filters">
+                <button class="filter-btn" data-group="all">All</button>
+                <button class="filter-btn" data-group="A+">A+</button>
+                <button class="filter-btn" data-group="A-">A-</button>
+                <button class="filter-btn" data-group="B+">B+</button>
+                <button class="filter-btn" data-group="B-">B-</button>
+                <button class="filter-btn" data-group="O+">O+</button>
+                <button class="filter-btn" data-group="O-">O-</button>
+                <button class="filter-btn" data-group="AB+">AB+</button>
+                <button class="filter-btn" data-group="AB-">AB-</button>
+            </div>
+        </div>
+
+        <div id="donorList" class="donor-list"></div>
+    </section>
+
+    <!-- ================= HOSPITALS ================= -->
+    <section id="hospitals" class="hospitals">
+        <h2>Nearby <span>Hospitals</span></h2>
+        <p class="subtitle">Trusted hospitals and blood banks around you</p>
+        <div id="hospitalGrid" class="hospital-grid"></div>
+    </section>
+
+    <!-- ================= EMERGENCY FORM ================= -->
+    <section id="emergency" class="emergency">
+        <h2>Emergency Blood Request</h2>
+        <form id="requestForm">
+            <input type="text" placeholder="Patient Name" required>
+            <select required>
+                <option value="">Required Blood Group</option>
+                <option>A+</option><option>A-</option>
+                <option>B+</option><option>B-</option>
+                <option>O+</option><option>O-</option>
+                <option>AB+</option><option>AB-</option>
+            </select>
+            <input type="tel" placeholder="Contact Number" required>
+            <input type="text" placeholder="Hospital Name" required>
+            <button type="submit">Submit Request</button>
+        </form>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <p>© 2026 LifeLine | Designed by Divyanshi</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
