@@ -38,7 +38,7 @@ A modern and responsive blood donation web application that helps users quickly 
 
 ### 🏠 Home Page
 
-![Home](images/home.png)
+![Home](images/home1.png)
 
 ### 🏠 Home Page  in dark mode
 
