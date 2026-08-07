@@ -30,8 +30,6 @@ A modern and responsive blood donation web application that helps users quickly 
 
 🔗 **Coming Soon...**
 
-> *(Replace this with your GitHub Pages or Vercel link after deployment.)*
-
 ---
 
 ## 📸 Project Screenshots
